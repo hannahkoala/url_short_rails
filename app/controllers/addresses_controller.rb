@@ -3,4 +3,8 @@ class AddressesController < ApplicationController
         @address = Address.find_by_name(params[:name])
         redirect_to @address.location
     end
+    
+    def new
+        @address = Address.new
+    end
 end
