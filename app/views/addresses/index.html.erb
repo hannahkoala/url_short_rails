@@ -4,12 +4,14 @@
   <thead>
   <th>Short URL</th>
   <th>Long URL</th>
+  <th>Clicks</th>
   </thead>
   <tbody>
   <% @addresses.each do |address| %>
     <tr>
-      <td><%= forward_user_url(name: address.name) %></td>
+      <td><%= link_to forward_user_url(name: address.name), forward_user_url(name: address.name) %></td>
       <td><%= address.location %></td>
+      <td><%= address.clicks %></td>
     </tr>
   <% end %>
   </tbody>
