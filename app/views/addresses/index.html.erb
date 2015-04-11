@@ -1,4 +1,16 @@
 <h2>Recently Shortened URLs</h2>
-<% @addresses.each do |address| %>
-  <%= forward_user_url(name: address.name) %> - <%= address.location %><br>
-<% end %>
+ 
+<table class="table table-striped">
+  <thead>
+  <th>Short URL</th>
+  <th>Long URL</th>
+  </thead>
+  <tbody>
+  <% @addresses.each do |address| %>
+    <tr>
+      <td><%= forward_user_url(name: address.name) %></td>
+      <td><%= address.location %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
