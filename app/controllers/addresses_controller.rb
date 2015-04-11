@@ -1,4 +1,8 @@
 class AddressesController < ApplicationController
+    def index
+        @addresses = Address.all
+    end
+    
     def forward_user
         @address = Address.find_by_name(params[:name])
         redirect_to @address.location
