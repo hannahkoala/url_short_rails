@@ -20,8 +20,7 @@ class AddressesController < ApplicationController
         if @address.save
             redirect_to root_path
         else
-            index()
-            render action: "index"
+            render action: "new"
         end
     end
     

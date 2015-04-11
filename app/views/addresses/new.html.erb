@@ -1,13 +1,14 @@
 <h2>Create a shorter URL</h2>
 
-<!--
 <div style="background:red; color: white; font-weight: bold">
   <% @address.errors.full_messages.each do |message| %>
     <%= message %><br>
   <% end %>
 </div>
--->
 
+<%= link_to "Go back", root_path %>
+
+<!--
 <%= form_for @address do |form| %>
   <div>
     <%= form.label :name %><br>
@@ -20,4 +21,4 @@
   </div>
  
   <p><%= form.submit "Shorten it!" %></p>
-<% end %>
+<% end %>-->
