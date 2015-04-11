@@ -5,6 +5,8 @@ class AddressesController < ApplicationController
     
     def forward_user
         @address = Address.find_by_name(params[:name])
+            @address.clicks = @address.clicks + 1
+            @address.save
         redirect_to @address.location
     end
     
