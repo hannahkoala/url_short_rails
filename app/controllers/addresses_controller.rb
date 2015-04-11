@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
     def index
         @addresses = Address.all
+        @address = Address.new
     end
     
     def forward_user
@@ -17,9 +18,10 @@ class AddressesController < ApplicationController
     def create
         @address = Address.new(params.require(:address).permit(:location, :name))
         if @address.save
-            redirect_to @address
+            redirect_to root_path
         else
-            render action: "new"
+            index()
+            render action: "index"
         end
     end
     

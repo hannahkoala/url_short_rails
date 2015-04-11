@@ -1,3 +1,31 @@
+<div class="navbar-margin">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <%= link_to "Short!", root_path, class: "navbar-brand" %>
+                </div>
+                <div class="nav navbar-nav navbar-right inline">
+                    <%= form_for @address do |form| %>
+                    <div class="forms">
+                        <%= form.text_field :name, placeholder: "Name" %>
+                        <%= form.text_field :location, placeholder: "Full url" %>
+                        <p class="forms"><%= form.submit "Shorten it!", class: "btn btn-primary" %></p>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div style="background:red; color: white; font-weight: bold">
+      <% @address.errors.full_messages.each do |message| %>
+        <%= message %><br>
+      <% end %>
+    </div>
+
+    <div class="container">
+    </div>
+
 <h2>Recently Shortened URLs</h2>
  
 <table class="table table-striped">
