@@ -16,4 +16,8 @@ class AddressesController < ApplicationController
             render action: "new"
         end
     end
+    
+    def show
+        @address = Address.find(params[:id])
+    end
 end
