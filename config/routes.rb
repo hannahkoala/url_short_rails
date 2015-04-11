@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :addresses
     get '/s/:name' => "addresses#forward_user", :as => :forward_user
     
-    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
